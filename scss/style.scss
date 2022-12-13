@@ -1,24 +1,26 @@
 /* GLOBAL RESETS */
-* { box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
-// VARIABLES 
+// VARIABLES
 $color-text-body: rgba(0, 0, 0, 0.8);
-$color-text-body-light: rgba(255, 255, 255, .8);
+$color-text-body-light: rgba(255, 255, 255, 0.8);
 $color-text-headings: rgba(0, 0, 0, 1);
 $color-text-headings-light: rgba(255, 255, 255, 1);
-$color-accent: rgb(190, 166, 193); 
-$color-accent-dark: rgb(32, 2, 31);  
-$color-accent-light: rgb(213, 213, 249); 
-$color-link: rgb(255, 255, 255); 
+$color-accent: rgb(190, 166, 193);
+$color-accent-dark: rgb(32, 2, 31);
+$color-accent-light: rgb(213, 213, 249);
+$color-link: rgb(255, 255, 255);
 $color-link-darker: rgb(31, 3, 43);
 
-$color-lightgrey: rgba(0,0,0,.5);
+$color-lightgrey: rgba(0, 0, 0, 0.5);
 
-$font-family-sans: Bilo,Helvetica, Arial, sans-serif;
-$font-family-heading: Co-headline, Georgia, 'Times New Roman', Times, sans-serif;
-$font-family-nav-heading: Co-headline, Georgia, 'Times New Roman', Times, sans-serif;
+$font-family-sans: Bilo, Helvetica, Arial, sans-serif;
+$font-family-heading: Co-headline, Georgia, "Times New Roman", Times, sans-serif;
+$font-family-nav-heading: Co-headline, Georgia, "Times New Roman", Times, sans-serif;
 
-// BREAKPOINTS 
+// BREAKPOINTS
 $breakpoint-small: 768px;
 $breakpoint-medium: 1050px;
 $breakpoint-large: 1250px;
@@ -30,7 +32,7 @@ $breakpoint-large: 1250px;
 @import "partials/media";
 @import "partials/layout";
 @import "partials/grid";
-@import "partials/structure"; 
-@import "partials/helpers"; 
+@import "partials/structure";
+@import "partials/helpers";
 @import "partials/sitenav";
-@import "partials/animations"; 
+@import "partials/animations";

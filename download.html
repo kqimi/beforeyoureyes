@@ -22,19 +22,7 @@
             </div>
             <h1 class="hide-visually"><a href="index.html">Personal Framework</a></h1>
         </div>
-        <nav class="site-nav"> 
-            <div class="container">
 
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#key-features">Key Features</a></li>
-                    <li><a href="#characters">Characters</a></li>
-                    <li><a href="#review">Reviews</a></li>
-
-                </ul>
-            </div>
-
-        </nav>
         <div class="download">
         <a href="#" class="button">Download</a>
         </div>
@@ -50,7 +38,7 @@
             <div class="download-icons">
                 <ul>
                     <li><a href="#"><img src="img/Epic_Games_logo.png" width="50" height="50" alt=""></a></li>
-                    <li><a href="#"><img src="img/Netflix-Brand-Logo.png" width="50" height="50" alt=""></a></li>
+                    <li><a href="#"><img src="img/Netflix-Brand-Logo.png" width="100" height="50" alt=""></a></li>
                     <li><a href="#"><img src="img/steam_icon_logo.svg" width="50" height="50" alt=""></a></li>
                 </ul>
             </div>
@@ -58,65 +46,86 @@
         
     </section>
 
-    <section id="system-reqs" class="scrolled triggered">
-        <h1>System Requirements</h1>
-        <div class="windows-reqs">
-        <ul>
-            <li><h2>Windows</h2>
-                <div class="columns">
-                    <b>MINIMUM:</b>
-                        <p>>Requires a 64-bit processor and operating system</p>
-                        <p>OS: Windows 7 64-bit and above
-                        Processor: AMD Athlon X4 880K 4Ghz or Intel Pentium G4500 3.5Ghz</p>
-                        <p>Memory: 8 GB RAM</p>
-                        <p>Graphics: Intel HD Graphics 520 or AMD Radeon Vega Integrated Graphics
-                        Storage: 5 GB available space</p>
-                        <b>RECOMMENDED:</b>
-                        <p>Requires a 64-bit processor and operating system</p>
-                        <p>OS: Windows 10 64-bit</p>
-                        <p>Processor: AMD Ryzen 1500X 3.5Ghz or equivalent </p>
-                        <p>Memory: 8 GB RAM</p>
-                        <p></p>Graphics: AMD RX 480, NVIDIA GTX 970, 4 GB of Video Memory and above </p>
-                        <p>Storage: 5 GB available space</p>
-                </div> 
-                </li>
+    <!-- 
+  
+  Radio version of tabs.
 
-            <li><h2>MacOS</h2>
-                <div class="columns">
-                        <b>MINIMUM:</b>
-                        <p>Requires a 64-bit processor and operating system</p>
-                        <p>OS: Mac OS 10.13 and up</p>
-                        <p>Processor: 2.2 GHz Intel Core i5</p>
-                        <p>Memory: 8 GB RAM</p>
-                        <p>Graphics: Intel Iris Plus or Radeon Pro 450</p>
-                        <p>Storage: 6 GB available space</p>
-                    <p><b>RECOMMENDED:</b>
-                        <p>Requires a 64-bit processor and operating system</p>
-                        <p>OS: Mac OS 10.13 and up</p>
-                        <p>Processor: M1 or Intel Core i7</p>
-                        <p>Memory: 8 GB RAM</p>
-                        <p>Graphics: M1 integrated graphics</p>
-                        <p>Storage: 6 GB available space</p>
-                </div>
-            </li>
-            <li><h2>Andriod/iOS</h2>
-                <div class="columns">
-                        <b>MINIMUM:</b>
-                        <p>A compatible device:
-                        Android phone or tablet running Android 8.0 or later
-                        iPhone, iPad, or iPod touch running iOS/iPadOS 15 or later</p>
-                        <b>RECOMMENDED:</b>
-                        <p>Requires a 64-bit processor and operating system
-                        OS: Mac OS 10.13 and up
-                        Processor: M1 or Intel Core i7
-                        Memory: 8 GB RAM
-                        Graphics: M1 integrated graphics
-                        Storage: 6 GB available space</p>
-                </div>
-            </li>
-        </ul>
-    </div>
+  Requirements:
+  - not rely on specific IDs for CSS (the CSS shouldn't need to know specific IDs)
+  - flexible for any number of unkown tabs [2-6]
+  - accessible
+
+  Caveats:
+  - since these are checkboxes the tabs not tab-able, need to use arrow keys
+
+  Also worth reading:
+  http://simplyaccessible.com/article/danger-aria-tabs/
+-->
+
+<div class="tabset">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="windows" checked>
+    <label for="tab1">Windows</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="mac">
+    <label for="tab2">MacOs</label>
+    <!-- Tab 3 -->
+    <input type="radio" name="tabset" id="tab3" aria-controls="phone">
+    <label for="tab3">Andriod/iOS</label>
+    
+    <div class="tab-panels">
+      <section id="windows" class="tab-panel">
+        <div class="container">
+        <b>MINIMUM:</b>
+           <p>Requires a 64-bit processor and operating system</p>
+           <p>OS: Windows 7 64-bit and above Processor: AMD Athlon X4 880K             4Ghz or Intel Pentium G4500 3.5Ghz</p>
+           <p>Memory: 8 GB RAM</p>
+           <p>Graphics: Intel HD Graphics 520 or AMD Radeon Vega                       Integrated Graphics Storage: 5 GB available space</p></p>
+        <b>RECOMMENDED:</b>
+           <p>Requires a 64-bit processor and operating system</p>
+           <p>OS: Windows 10 64-bit</p>
+           <p>Processor: AMD Ryzen 1500X 3.5Ghz or equivalent </p>
+           <p>Memory: 8 GB RAM</p>
+           <p>Graphics: AMD RX 480, NVIDIA GTX 970, 4 GB of Video Memory               and above </p>
+           <p>Storage: 5 GB available space</p>
+      </div>
     </section>
+      <section id="mac" class="tab-panel">
+        <div class="container">
+        <b>MINIMUM:</b>
+           <p>Requires a 64-bit processor and operating system</p>
+           <p>OS: Mac OS 10.13 and up</p>
+           <p>Processor: 2.2 GHz Intel Core i5</p>
+           <p>Memory: 8 GB RAM</p>
+           <p>Graphics: Intel Iris Plus or Radeon Pro 450</p>
+           <p>Storage: 6 GB available space</p>
+        <b>RECOMMENDED:</b>
+           <p>Requires a 64-bit processor and operating system</p>
+           <p>OS: Mac OS 10.13 and up</p>
+           <p>Processor: M1 or Intel Core i7</p>
+           <p>Memory: 8 GB RAM</p>
+           <p>Graphics: M1 integrated graphics</p>
+           <p>Storage: 6 GB available space</p>
+        </div>
+      </section>
+      <section id="phone" class="tab-panel">
+        <div class="container">
+        <b>MINIMUM:</b>
+           <p>A compatible device: Android phone or tablet running Android             8.0 or later iPhone, iPad, or iPod touch running iOS/iPadOS             15 or later</p>
+        <b>RECOMMENDED:</b>
+           <p>Requires a 64-bit processor and operating system
+                          OS: Mac OS 10.13 and up
+                          Processor: M1 or Intel Core i7
+                          Memory: 8 GB RAM
+                          Graphics: M1 integrated graphics
+                          Storage: 6 GB available space</p>
+        </div>
+      </section>
+    </div>
+    
+  </div>
+  
+  
 
     </section>
 
@@ -127,13 +136,14 @@
         
 </main>
 
-    <footer class="site-footer">
-        <div class="footer-container">
+<footer class="site-footer">
+    <div class="footer-container">
 
-        <div class="one-whole">
+        <div>
             <img src="img/bye-logo.png" alt="byefooterlogo">
+        </div>
             
-        <div class="one-whole">
+        <div>
             <ul>
                 <li><p>Private Policy</p></li>
                 <li><p>Terms & Conditions</p></li>
@@ -142,23 +152,20 @@
             </ul>
         </div>
 
-        <div class="one-whole">
+        <div>
             <p>@2021 Before Your Eyes.  ALL RIGHTS RESERVED</p>
         </div>
-        <div class="one-whole">
+        <div>
             <p>DISCLAIMER: MOST CONTENT RIGHT BELONG TO GOODBYE GAMES </p>
         </div>
-        <div class="one-whole">
+        <div>
             <ul>
-                <li><a href="#"><img src="img/instagram.svg" width="100px" height="100px"></a></li>
-                <li><a href="#"><img src="img/twitter.svg" width="100px" height="100px"></a></li>
-                <li><a href="#"><img src="img/facebook.svg" width="100px" height="100px"></a></li>
+                <li><a href="#"><img src="img/instagram.svg" width="50px" height="50px"></a></li>
+                <li><a href="#"><img src="img/twitter.svg" width="50px" height="50px"></a></li>
+                <li><a href="#"><img src="img/facebook.svg" width="50px" height="50px"></a></li>
             </ul>
-        </div>
-        </nav>
+        </div> 
     </div>
-
-    </footer>
     
     <!-- SMOOTH SCROLL BY CHRIS HERDINANDI -->
 
